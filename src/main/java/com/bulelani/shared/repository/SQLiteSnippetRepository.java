@@ -116,12 +116,12 @@ public class SQLiteSnippetRepository implements ISnippetRepository {
     public void update(Snippet snippet) {
         String sql = """
                         UPDATE snippets
-                        SET  expansion = ?
+                        SET  abbreviation = ?
                         WHERE condition;
                      """;
         try {
             PreparedStatement stmt = connection.prepareStatement(sql);
-            stmt.setString(1, snippet.getExpansion());
+            stmt.setString(1, snippet.getAbbreviation());
             int rows = stmt.executeUpdate();
             if (rows == 0) {
                 // executeUpdate succeeds even if nothing matched — check rows affected
