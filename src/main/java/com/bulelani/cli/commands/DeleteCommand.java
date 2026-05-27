@@ -12,9 +12,4 @@ public class DeleteCommand extends Command{
     public void execute(SnippetService snippetService) {
         snippetService.deleteSnippet(this.abbriviation);
     }
-
-    @Override
-    public void execute() {
-
-    }
 }

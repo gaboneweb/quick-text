@@ -17,9 +17,4 @@ public class UpdateCommand extends Command {
         snippetService.updateSnippet(new Snippet(this.expantion, this.abbriviation));
     }
 
-    @Override
-    public void execute() {
-
-    }
-
 }

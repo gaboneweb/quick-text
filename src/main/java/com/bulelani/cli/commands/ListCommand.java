@@ -37,8 +37,4 @@ public class ListCommand extends Command{
         System.out.println(table.render());
     }
 
-    @Override
-    public void execute() {
-
-    }
 }

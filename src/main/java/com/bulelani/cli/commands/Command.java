@@ -7,20 +7,13 @@ public abstract class Command {
 
     public abstract void execute(SnippetService snippetService);
 
-    public abstract void execute();
-
     public static Command create(Args args){
-        switch (args.getCommand()){
-            case "add":
-                return new AddCommand(args.getParameter(0), args.getParameter(1));
-            case "list":
-                return new ListCommand();
-            case "delete":
-                return new DeleteCommand(args.getParameter(0));
-            case "update":
-                return new UpdateCommand(args.getParameter(0), args.getParameter(1));
-            default:
-                return new HelpCommand();
-        }
+        return switch (args.getCommand()) {
+            case "add" -> new AddCommand(args.getParameter(0), args.getParameter(1));
+            case "list" -> new ListCommand();
+            case "delete" -> new DeleteCommand(args.getParameter(0));
+            case "update" -> new UpdateCommand(args.getParameter(0), args.getParameter(1));
+            default -> new HelpCommand();
+        };
     }
 }

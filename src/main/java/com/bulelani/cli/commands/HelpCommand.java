@@ -7,11 +7,6 @@ public class HelpCommand extends Command{
 
     @Override
     public void execute(SnippetService snippetService) {
-        execute();
-    }
-
-    @Override
-    public void execute() {
         System.out.println("""
                 
                  ██████╗ ██╗   ██╗██╗ ██████╗██╗  ██╗    ████████╗███████╗██╗  ██╗████████╗
@@ -46,6 +41,5 @@ public class HelpCommand extends Command{
                   Start the daemon separately to enable live text expansion:
                   java -jar quick-text-daemon.jar
                 """);
-        //System.out.println("You can only do the add command currently");
     }
 }
